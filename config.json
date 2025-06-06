@@ -1,0 +1,8 @@
+{
+  "TEAMS_WORKFLOW_URL": "",
+  "TEAMS_OUTGOING_TOKEN": "",
+  "FORWARD_URL": "",
+  "SKIP_VERIFICATION": 0,
+  "LOG_LEVEL": "INFO",
+  "LOG_FILE": "teams_webhook.log"
+}

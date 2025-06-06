@@ -1,0 +1,25 @@
+# .htaccess - URLリライト設定
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # ベースパスを設定
+    RewriteBase /teams/
+    
+    # ファイルやディレクトリが存在する場合はリダイレクトしない
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # すべてのリクエストをindex.phpにリダイレクト
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# PHP設定
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_value error_reporting E_ALL & ~E_NOTICE & ~E_DEPRECATED
+    php_value max_execution_time 30
+    php_value memory_limit 128M
+</IfModule>
+
+DirectoryIndex index.php
